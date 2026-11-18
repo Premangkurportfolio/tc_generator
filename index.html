@@ -611,7 +611,7 @@ function build(){
   c.push(delay);
  }
  if($("ms").checked&&k!=="msme"&&k!=="gem"&&k.indexOf("ap")!==0)c.push(msmeC);
- if(k!=='gem'&&k.indexOf('ap')!==0)c.push(["Taxes and GST",gstText()]);
+ if(k!=='gem'&&k!=='supply'&&k.indexOf('ap')!==0)
  if(k!=='gem'&&k.indexOf('ap')!==0)c.push(["Termination and Disputes","The "+A+" may rescind or terminate the contract for breach after written notice, as provided in the General Conditions of Contract [verify]. Disputes shall be resolved by the dispute resolution procedure in the tender and General Conditions of Contract, including arbitration under the Arbitration and Conciliation Act, 1996 where provided [verify]. Courts at [city] shall have jurisdiction."]);
  var sub=k==="other"?val("custom","subject"):t.n;
  var h=letter()+'<h2>TERMS &amp; CONDITIONS</h2><p class="sub">'+esc(sub)+'</p><dl>'
@@ -621,7 +621,7 @@ function build(){
   +(ms?'<dt>Udyam No.</dt><dd>'+esc(val("udyam","Udyam number"))+'</dd>':'')
   +'<dt>Date</dt><dd>'+esc(val("dt","date"))+'</dd><dt>Location</dt><dd>'+esc(loc)+'</dd>'
   +'<dt>Amount</dt><dd>'+esc(money())+'</dd></dl>';
- c.forEach(function(x,i){h+='<h3>'+(i+1)+'. '+esc(x[0])+'</h3><p>'+esc(x[1])+'</p>'});
+ c.forEach(function(x,i){h+='<h3>'+(i+1)+'. '+esc(x[0])+'</h3><p>'+esc(x[1]).split('\n').join('</p><p>')+'</p>'});
  h+='<div class="notes"><strong>Important Notes</strong><p>Highlighted items in square brackets are open points to be filled or confirmed. Clauses marked “verify” need legal or technical verification before use. The order of precedence between this document, the tender documents and the General Conditions of Contract should be confirmed from the tender [verify]. Nothing here is agreed until signed.</p>'+(k==='gem'?GEMNOTE:k.indexOf('ap')===0?APNOTE:CGNOTE)+'</div>';
  h+='<h3>Acceptance and Agreement</h3><p>The parties have read and accepted these Terms &amp; Conditions.</p><div class="sign"><div>For the '+A+'<br>Name, signature, date</div><div>For the '+B+'<br>Name, signature, date</div></div>';
  h+=annex(IT,PS)+(k==='gem'?gemAnx(IT,PS):'');stat(h);save();
