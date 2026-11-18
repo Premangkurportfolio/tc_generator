@@ -611,8 +611,8 @@ function build(){
   c.push(delay);
  }
  if($("ms").checked&&k!=="msme"&&k!=="gem"&&k.indexOf("ap")!==0)c.push(msmeC);
- if(k!=='gem'&&k!=='supply'&&k.indexOf('ap')!==0)
- if(k!=='gem'&&k.indexOf('ap')!==0)c.push(["Termination and Disputes","The "+A+" may rescind or terminate the contract for breach after written notice, as provided in the General Conditions of Contract [verify]. Disputes shall be resolved by the dispute resolution procedure in the tender and General Conditions of Contract, including arbitration under the Arbitration and Conciliation Act, 1996 where provided [verify]. Courts at [city] shall have jurisdiction."]);
+ if(k!=='gem'&&k!=='supply'&&k.indexOf('ap')!==0)c.push(["Taxes and GST",gstText()]);
+ if(k!=='gem'&&k!=='supply'&&k.indexOf('ap')!==0)c.push(["Termination and Disputes","The "+A+" may rescind or terminate the contract for breach after written notice, as provided in the General Conditions of Contract [verify]. Disputes shall be resolved by the dispute resolution procedure in the tender and General Conditions of Contract, including arbitration under the Arbitration and Conciliation Act, 1996 where provided [verify]. Courts at [city] shall have jurisdiction."]);
  var sub=k==="other"?val("custom","subject"):t.n;
  var h=letter()+'<h2>TERMS &amp; CONDITIONS</h2><p class="sub">'+esc(sub)+'</p><dl>'
   +'<dt>Subject</dt><dd>'+esc(val("project","project or work title"))+'</dd>'
