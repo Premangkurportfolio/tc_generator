@@ -267,7 +267,7 @@ function build(){
  var pay=$("pay").value.trim()||(PS.rows.length?"as per the payment schedule in the Annexure.":"[payment schedule to be confirmed]");
  var sc=$("scope").value.trim()||"["+t.sc.toLowerCase()+"]",du=val("duration","time period"),c=[];
  $("cwrap").hidden=k!=="other";$("gwrap").hidden=k!=="gem";
- (function(g){['p2','scope','dlp','delay','delayPct'].forEach(function(id){var e=$(id),p=e.parentElement;if(p&&p.tagName==='DIV'&&p.parentElement&&p.parentElement.classList.contains('row')){p.hidden=g}else{e.hidden=g;var l=document.querySelector('label[for="'+id+'"]');if(l)l.hidden=g}})})(false);
+
  $("apwrap").hidden=k.indexOf("ap")!==0;
  var emdA=$('apemd').value.trim()||'[EMD amount]',maat=$('apmaat').value.trim()||'[minimum average annual turnover]';
  var govAP=['Governing Documents and Precedence','This contract is governed by the Notice Inviting Tender (NIT), the bid document, the Letter of Award (LOA), the Bill of Quantities, the technical specifications and APDCL’s General Conditions of Supply and Erection (GCSE) in force. Terms not specified in the bid document are governed by the GCSE, which is available on the APDCL website [verify the GCSE edition in force].'];
